@@ -46,7 +46,7 @@
           
              
           <md-list class="dropdown"><drop-down>
-            <md-field>
+          
                 <a slot="title" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="material-icons">notifications</i>
                  
