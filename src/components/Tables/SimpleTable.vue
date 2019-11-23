@@ -2,10 +2,10 @@
   <div>
     <md-table v-model="users" :table-header-color="tableHeaderColor">
       <md-table-row slot="md-table-row" slot-scope="{ item }">
-        <md-table-cell md-label="Name">{{ item.name }}</md-table-cell>
-        <md-table-cell md-label="Country">{{ item.country }}</md-table-cell>
-        <md-table-cell md-label="City">{{ item.city }}</md-table-cell>
-        <md-table-cell md-label="Salary">{{ item.salary }}</md-table-cell>
+        <md-table-cell md-label="Titre">{{ item.name }}</md-table-cell>
+        <md-table-cell md-label="Destinataire">{{ item.country }}</md-table-cell>
+        <md-table-cell md-label="Module">{{ item.city }}</md-table-cell>
+        <md-table-cell md-label="Date">{{ item.salary }}</md-table-cell>
       </md-table-row>
     </md-table>
   </div>
@@ -25,41 +25,31 @@ export default {
       selected: [],
       users: [
         {
-          name: "Dakota Rice",
-          salary: "$36,738",
-          country: "Niger",
-          city: "Oud-Turnhout"
+          name: "Introduction d'IGL",
+          salary: "1-11-19",
+          country: "1CS",
+          city: "IGL"
         },
-        {
-          name: "Minerva Hooper",
-          salary: "$23,738",
-          country: "Curaçao",
-          city: "Sinaai-Waas"
+          {
+          name: "Hachage",
+          salary: "3-11-19",
+          country: "2CP",
+          city: "SFSD"
         },
-        {
-          name: "Sage Rodriguez",
-          salary: "$56,142",
-          country: "Netherlands",
-          city: "Overland Park"
+        {  
+          name: "Methodologies",
+          salary: "18-11-19",
+          country: "1CS",
+          city: "IGL"
         },
-        {
-          name: "Philip Chaney",
-          salary: "$38,735",
-          country: "Korea, South",
-          city: "Gloucester"
+        {  
+          name: "UML",
+          salary: "27-11-19",
+          country: "1CS",
+          city: "IGL"
         },
-        {
-          name: "Doris Greene",
-          salary: "$63,542",
-          country: "Malawi",
-          city: "Feldkirchen in Kārnten"
-        },
-        {
-          name: "Mason Porter",
-          salary: "$78,615",
-          country: "Chile",
-          city: "Gloucester"
-        }
+        
+       
       ]
     };
   }

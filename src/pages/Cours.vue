@@ -6,8 +6,8 @@
       >
         <md-card>
           <md-card-header data-background-color="green">
-            <h4 class="title">Simple Table</h4>
-            <p class="category">Here is a subtitle for this table</p>
+            <h4 class="title">Cours Envoyés</h4>
+            <p class="category">Informations sur les cours que vous avez envoyé, y compris la date d'envoi, la promo concernée...</p>
           </md-card-header>
           <md-card-content>
             <simple-table table-header-color="green"></simple-table>
@@ -19,8 +19,37 @@
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
       >
         
-      </div>
+      </div> 
     </div>
+     <form>
+    <md-card>
+      <md-card-header data-background-color="green">
+        <h4 class="title">Nouveau Cours</h4>
+        <p class="category">Envoyer un nouveau cours en remplissant ce formulaire.</p>
+      </md-card-header>
+
+      <md-card-content>
+       <div class="md-layout-item md-small-size-100 md-size-33">
+            <md-field>
+              <label>Titre</label>
+              <md-input v-model="emailadress" type="text"></md-input>
+            </md-field>
+          </div>
+            <div class="md-layout-item md-small-size-100 md-size-33">
+            <md-field>
+              <label>Destinataire</label>
+              <md-input v-model="emailadress" type="email"></md-input>
+            </md-field>
+          </div>
+            <div class="md-layout-item md-small-size-100 md-size-100">
+            <md-field>
+              <label>Description</label>
+              <md-input v-model="emailadress" type="text"></md-input>
+            </md-field>
+          </div>
+      </md-card-content>
+      </md-card>
+      </form>
   </div>
 </template>
 
