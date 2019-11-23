@@ -20,9 +20,13 @@
       >
         
       </div>
+      
     </div>
   </div>
+  
 </template>
+
+
 
 <script>
 import { SimpleTable, OrderedTable } from "@/components";
