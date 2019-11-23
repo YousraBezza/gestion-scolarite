@@ -20,7 +20,7 @@
         <md-table-cell md-label="Contrôle intermédiaire">
           <md-field> <md-input v-model="item.ci"></md-input></md-field>
           </md-table-cell>
-        <md-table-cell md-label="Contrôle Finale">
+        <md-table-cell md-label="Contrôle Final">
           <md-field> <md-input v-model="item.exam"></md-input></md-field>
         </md-table-cell>
         <md-table-cell>
