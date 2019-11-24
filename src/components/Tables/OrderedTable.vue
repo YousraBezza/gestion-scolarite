@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import {rows} from 'C:/igl/gestion-scolarite/src/pages';
 export default {
   name: "ordered-table",
   props: {
