@@ -35,22 +35,22 @@
 
       <md-card-content>
           <div class="md-layout">
-       <div class="md-layout-item md-small-size-100 md-size-50 ">
+       <div class="md-layout-item md-small-size-100 md-size-60 ">
             <md-field>
               <label>Titre</label>
               <md-input v-model="emailadress" type="text"></md-input>
             </md-field>
           </div>
 
-          <div class="col-md-12 mr-40">
+        
           <div class="md-layout-item md-small-size-100 md-size-20">
           <div class="upload-btn-wrapper">
               <md-button md-button class="md-raised md-success" > <i class="material-icons">attachment</i> </md-button>
               <input type="file" name="myfile" />
             </div>
           </div>
-          </div>
           
+           
         
           <div class="md-layout-item md-small-size-100 md-size-60">
               <md-field>

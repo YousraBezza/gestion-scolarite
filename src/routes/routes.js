@@ -22,34 +22,34 @@ const routes = [
       },
       {
         path: "dashboard",
-        name: "Dashboard",
+        name: "Suivi",
         component: Suivi
       },
       
       {
         path: "table",
-        name: "Table List",
+        name: "Cours",
         component: Cours
       },
       {
         path: "typography",
-        name: "Typography",
+        name: "Emplois du temps",
         component: Emplois
       },
       {
         path: "icons",
-        name: "Icons",
+        name: "Délibération",
         component: Deliberation
       },
 
         {
           path: "maps",
-          name: "maps",
+          name: "Encadrement",
           component: Encadrement
         },
         {
           path: "notifications",
-          name: "notifications",
+          name: "Paramètres",
           component: Parametres
         },
         
