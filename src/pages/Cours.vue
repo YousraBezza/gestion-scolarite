@@ -26,7 +26,7 @@
       <div
         class="  md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-90 "
       >
-      <form >
+      <form v-on :submit="formSubmit">
     <md-card class="md-layout-item ">
       <md-card-header data-background-color="green">
         <h4 class="title">Nouveau Cours</h4>
@@ -35,27 +35,27 @@
 
       <md-card-content>
           <div class="md-layout">
-       <div class="md-layout-item md-small-size-100 md-size-50 ">
+       <div class="md-layout-item md-small-size-100 md-size-60 ">
             <md-field>
               <label>Titre</label>
-              <md-input v-model="emailadress" type="text"></md-input>
+              <md-input v-model="titre" type="text"></md-input>
             </md-field>
           </div>
 
-          <div class="col-md-12 mr-40">
+        
           <div class="md-layout-item md-small-size-100 md-size-20">
           <div class="upload-btn-wrapper">
               <md-button md-button class="md-raised md-success" > <i class="material-icons">attachment</i> </md-button>
               <input type="file" name="myfile" />
             </div>
           </div>
-          </div>
           
+           
         
           <div class="md-layout-item md-small-size-100 md-size-60">
               <md-field>
                 <label>Description</label>
-                <md-input v-model="emailadress" type="text"></md-input>
+                <md-input v-model="description" type="text"></md-input>
               </md-field>
             </div>
             <div class="md-layout-item md-small-size-100 md-size-20">
@@ -87,6 +87,10 @@
       </md-card-content>
       </md-card>
     </form>
+    <strong>Output:</strong>
+                        <pre>
+                        {{output}}
+                        </pre>
       </div>
      
 
@@ -95,14 +99,39 @@
 </template>
 
 <script>
-import { SimpleTable, OrderedTable } from "@/components";
-
+import { SimpleTable } from "@/components"
+import axios from 'axios'
 export default {
   components: {
-    OrderedTable,
+
     SimpleTable
-  }
-};
+  },
+
+      
+        data() {
+            return {
+              titre: '',
+              description: '',
+             output:'',
+            };
+        },
+        methods: {
+            formSubmit(e) {
+                e.preventDefault();
+                let currentObj = this;
+                this.axios.post('http://localhost:8000/cours', {
+                   titre: this.titre,
+                    description: this.description
+                })
+                .then(function (response) {
+                    currentObj.output = response.data;
+                })
+                .catch(function (error) {
+                    currentObj.output = error;
+                });
+            }
+        }
+    }
 </script>
 <style>.upload-btn-wrapper {
     position: relative;
