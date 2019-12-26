@@ -18,5 +18,5 @@ connection.query('SELECT * from eleve',function(err,rows,field){
     }
     
 });
-export {rows};
+export rows;
 connection.end();
