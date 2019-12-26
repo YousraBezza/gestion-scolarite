@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import {result} from 'C:/igl/gestion-scolarite/connection-example.js';
+//import {result} from 'C:/igl/gestion-scolarite/connection-example.js';
 export default {
   name: "ordered-table",
   props: {
@@ -53,7 +53,7 @@ export default {
       selected: [],
       users: [
         {
-          matricule: connection.result[1].id,
+          matricule: 1,
           nom: "Bezza",
           prenom: "Yousra",
           absence: "2",
