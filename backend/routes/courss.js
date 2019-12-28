@@ -14,7 +14,7 @@ router.get('/',(req,res)=>{
         password: '',
         database: 'tpigl'
     })
-  const id_pro= 2 ; //on met ici l'id du prof connecté
+  const id_pro= 1 ; //on met ici l'id du prof connecté
     connection.query("SELECT * FROM cours WHERE id_prof = ? ",[id_pro],(err, rows, fields)=>{
         if(!err){
             
@@ -39,36 +39,33 @@ router.get('/',(req,res)=>{
 router.post("/add",(req,res)=>{
    
     const today=new Date();
-    
-
-    const coursData={
-        titre: req.body.titre,
-        Promo:req.body.promo,
-        description:req.body.description,
-        date_h:today,
-     
-    }
-   
-   /* cours.findOne({
-        where:{
-            titre : req.body.titre
-        }
+    const connection = mysql.createConnection({
+        host : 'localhost',
+        user : 'root',
+        password: '',
+        database: 'tpigl'
     })
-    .then(cours => {
-        if(!cours){
-           */
-        cours.create(coursData).then(cours=>{
-            res.json({status:cours.titre +'enregistré'})
-            .catch(err =>{
-                res.send('erreur'+err)
-            })
-        })
-   // }else{res.json({error : 'ce titre existe deja'})}
+  const id_pro= 1 ; //on met ici l'id du prof connecté
+    connection.query("INSERT INTO cours (titre,description,id_prof,promo,date_h) values (?,?,?,?,?)",[req.body.titre,req.body.description,id_pro,req.body.promo,today],(err, result, fields)=>{
+        if(!err){
+            
+            console.log(result);
+            res.end();
+            return
+        
+        }else{
+            console.log(err);
+            res.end();
+            return
+        }
+    
+        
+        
+    })
 
-  //  })
+    connection.end()
 
- 
-    .catch(err =>{res.send('error '+err); console.log("here1")
-})
+
+  
 })
 module.exports=router
