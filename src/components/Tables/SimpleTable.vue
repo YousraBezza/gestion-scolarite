@@ -1,17 +1,18 @@
 <template>
   <div>
-    <md-table v-model="users" :table-header-color="tableHeaderColor">
+    <md-table v-model="cours" :table-header-color="tableHeaderColor">
       <md-table-row slot="md-table-row" slot-scope="{ item }">
-        <md-table-cell md-label="Titre">{{ item.name }}</md-table-cell>
-        <md-table-cell md-label="Destinataire">{{ item.country }}</md-table-cell>
-        <md-table-cell md-label="Module">{{ item.city }}</md-table-cell>
-        <md-table-cell md-label="Date">{{ item.salary }}</md-table-cell>
+        <md-table-cell md-label="Titre">{{ item.titre }}</md-table-cell>
+        <md-table-cell md-label="Destinataire">{{ item.promo }}</md-table-cell>
+        <md-table-cell md-label="Description">{{ item.description }}</md-table-cell>
+        <md-table-cell md-label="Date">{{ item.date_h}}</md-table-cell>
       </md-table-row>
     </md-table>
   </div>
 </template>
 
 <script>
+import CoursServ from '../../coursServ.js';
 export default {
   name: "simple-table",
   props: {
@@ -21,37 +22,15 @@ export default {
     }
   },
   data() {
-    return {
-      selected: [],
-      users: [
-        {
-          name: "Introduction d'IGL",
-          salary: "1-11-19",
-          country: "1CS",
-          city: "IGL"
-        },
-          {
-          name: "Hachage",
-          salary: "3-11-19",
-          country: "2CP",
-          city: "SFSD"
-        },
-        {  
-          name: "Methodologies",
-          salary: "18-11-19",
-          country: "1CS",
-          city: "IGL"
-        },
-        {  
-          name: "UML",
-          salary: "27-11-19",
-          country: "1CS",
-          city: "IGL"
-        },
-        
-       
-      ]
-    };
-  }
+   cours=[]
+  },
+    async created() {
+    try {
+      this.cours = await CoursServ.getClasse();
+    } catch(err){
+      this.error = err.message;
+    }
+  },
+ 
 };
 </script>

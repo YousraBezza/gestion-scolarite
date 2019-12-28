@@ -1,4 +1,4 @@
-const sequelize = require("sequelize")
+const Sequelize = require("sequelize")
 const db= require("../database/db")
 module.exports=db.sequelize.define(
     'cours',
@@ -11,12 +11,14 @@ module.exports=db.sequelize.define(
         },
         titre: {type:Sequelize.STRING,
         },
+        
         Promo: {type:Sequelize.STRING,
         },
         date_h:{
             type:Sequelize.DATE,
             defaultValue: Sequelize.NOW,
-        }
+        },
+        description:{type:Sequelize.STRING,}
     },
     {
     timestamps:false,

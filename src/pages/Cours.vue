@@ -26,7 +26,7 @@
       <div
         class="  md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-90 "
       >
-      <form v-on :submit="formSubmit">
+      <form @submit="formSubmit">
     <md-card class="md-layout-item ">
       <md-card-header data-background-color="green">
         <h4 class="title">Nouveau Cours</h4>
@@ -38,7 +38,7 @@
        <div class="md-layout-item md-small-size-100 md-size-60 ">
             <md-field>
               <label>Titre</label>
-              <md-input v-model="titre" type="text"></md-input>
+              <md-input v-model="titre" type="text" required></md-input>
             </md-field>
           </div>
 
@@ -46,7 +46,7 @@
           <div class="md-layout-item md-small-size-100 md-size-20">
           <div class="upload-btn-wrapper">
               <md-button md-button class="md-raised md-success" > <i class="material-icons">attachment</i> </md-button>
-              <input type="file" name="myfile" />
+              <input type="file"  required />
             </div>
           </div>
           
@@ -55,19 +55,19 @@
           <div class="md-layout-item md-small-size-100 md-size-60">
               <md-field>
                 <label>Description</label>
-                <md-input v-model="description" type="text"></md-input>
+                <md-input v-model="description" type="text" required></md-input>
               </md-field>
             </div>
             <div class="md-layout-item md-small-size-100 md-size-20">
-           
+          
                 <md-list class="dropdown"><drop-down>   
                       <a slot="title" class="dropdown-toggle" data-toggle="dropdown">
                       </a>
-                      <md-button md-button class="md-raised md-success"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <md-button md-button class="md-raised md-success"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                           Destinataire
                         </md-button>
                       
-                      <ul class="dropdown-menu dropdown-menu-left">
+                      <ul class="dropdown-menu dropdown-menu-left" name="drop">
                         <li><a href="#">1CP</a></li>
                         <li><a href="#">2CP</a></li>
                         <li><a href="#">1CS</a></li>
@@ -87,10 +87,7 @@
       </md-card-content>
       </md-card>
     </form>
-    <strong>Output:</strong>
-                        <pre>
-                        {{output}}
-                        </pre>
+   
       </div>
      
 
@@ -101,6 +98,7 @@
 <script>
 import { SimpleTable } from "@/components"
 import axios from 'axios'
+
 export default {
   components: {
 
@@ -112,26 +110,24 @@ export default {
             return {
               titre: '',
               description: '',
-             output:'',
+              drop:'',
             };
         },
         methods: {
-            formSubmit(e) {
-                e.preventDefault();
-                let currentObj = this;
-                this.axios.post('http://localhost:8000/cours', {
+            formSubmit() {
+             
+               axios.post('http://localhost:8080/courss/add', {
                    titre: this.titre,
-                    description: this.description
-                })
-                .then(function (response) {
-                    currentObj.output = response.data;
-                })
-                .catch(function (error) {
-                    currentObj.output = error;
-                });
-            }
-        }
+                  promo:"1cs",
+                  description:this.description,
+           
+               })
+           
+            
+        
     }
+}
+}
 </script>
 <style>.upload-btn-wrapper {
     position: relative;

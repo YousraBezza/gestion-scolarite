@@ -1,8 +1,9 @@
 const Sequelize = require("Sequelize")
 const db={}
-const sequelize= new sequelize("tpigl","root","",{
+const sequelize= new Sequelize("tpigl","root","",{
     host:'localhost',
     dialect:'mysql',
+   
 
 })
 db.sequelize=sequelize
