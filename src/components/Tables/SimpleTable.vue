@@ -22,13 +22,22 @@ export default {
     }
   },
   data() {
-   cours=[]
+    return{
+   cours:[]
+    }
   },
     async created() {
     try {
       this.cours = await CoursServ.getClasse();
     } catch(err){
-      this.error = err.message;
+     console.log('erreur'+err);
+    }
+  },
+   async updated() {
+    try {
+      this.cours = await CoursServ.getClasse();
+    } catch(err){
+     console.log('erreur'+err);
     }
   },
  

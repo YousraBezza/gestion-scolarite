@@ -60,19 +60,18 @@
             </div>
             <div class="md-layout-item md-small-size-100 md-size-20">
           
-                <md-list class="dropdown"><drop-down>   
-                      <a slot="title" class="dropdown-toggle" data-toggle="dropdown">
+                <md-list class="dropdown" required><drop-down>   
+                      <a slot="title" class="dropdown-toggle" data-toggle="dropdown" required>
                       </a>
-                      <md-button md-button class="md-raised md-success"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                      <md-button md-button class="md-raised md-success"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
                           Destinataire
                         </md-button>
                       
-                      <ul class="dropdown-menu dropdown-menu-left" name="drop">
-                        <li><a href="#">1CP</a></li>
-                        <li><a href="#">2CP</a></li>
-                        <li><a href="#">1CS</a></li>
-                        <li><a href="#">2CS</a></li>
-                        <li><a href="#">3CS</a></li>
+                      <ul class="dropdown-menu dropdown-menu-left" id="drop" >
+                        <li><md-button v-on:click="SetPromo('1CP')" class="md-simple">1CP</md-button></li>
+                        <li><md-button v-on:click="SetPromo('2CP')" class="md-simple">2CP</md-button></li>
+                        <li><md-button v-on:click="SetPromo('1CS')" class="md-simple">1CS</md-button></li>
+                        <li><md-button v-on:click="SetPromo('2CS')" class="md-simple">2CS</md-button></li>                       
                       </ul>
                     </drop-down>
                     
@@ -111,21 +110,27 @@ export default {
               titre: '',
               description: '',
               drop:'',
+              promo:"1CP",
             };
         },
         methods: {
             formSubmit() {
-             
+    
                axios.post('http://localhost:8080/courss/add', {
                    titre: this.titre,
-                  promo:"1cs",
+                  promo:this.promo,
                   description:this.description,
            
-               })
-           
-            
-        
+               })  
+    },
+   async  SetPromo(prom){
+ try{
+      this.promo = prom;
+    }catch(err){
+     console.log('erreur'+err)
     }
+    }
+
 }
 }
 </script>
