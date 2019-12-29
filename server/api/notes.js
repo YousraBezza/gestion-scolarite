@@ -10,22 +10,23 @@ router.get('/:id_modu',(req,res)=>{
         password: '',
         database: 'tpigl'
     });
-    
-    let newNote1 = 18;
-    let newnote2 = 19;
-    let newnote3 = 20;
-    let newabs = 3;
-    let etud = 170147;
-    const moduID = req.params.id_modu
-    let sql = 'UPDATE notes SET Note1 = 18 , note2 = 19 , note3 = 20 , abs = 3 WHERE id_modu = ? AND id_etud = 170151';
-    let query = connection.query(sql,[moduID],(err, result)=>{
+    for (let i=0; i< req.body.length;i++)
+    {
+    const moduID = req.params.id_modu;
+    const etudID = req.body[i].id_etud;
+    const NNote1 = req.body[i].Note1;
+    const Nnote2 = req.body[i].note2;
+    const Nnote3 = req.body[i].note3;
+    let sql = 'UPDATE notes SET Note1 = ? , note2 = ? , note3 = ?  WHERE id_modu = ? AND id_etud = ?';
+    let query = connection.query(sql,[NNote1,Nnote2,Nnote3,moduID,etudID],(err, result)=>{
         if(err) throw err;
         console.log(result);
-        res.send('note updated ....');
+      
     });
-
-
+    };  
+    res.send('notes updated ....');
     connection.end();
 })
 module.exports = router;
+                           
                            
