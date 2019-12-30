@@ -1,9 +1,25 @@
 <template>
   <div>
+    <md-list class="dropdown md-layout-item d-small-size-5 md-size-5"><drop-down>   
+                      <a slot="title" class="dropdown-toggle" data-toggle="dropdown">
+                      </a>
+                      <md-button md-button class="md-raised md-success"   data-toggle="dropdown"  aria-expanded="false">
+                          <p>{{groupe}}</p>
+                        </md-button>
+                      
+                      <ul class="dropdown-menu dropdown-menu-left">
+                        <li><md-button v-on:click="changerGroupe(306)" class="md-simple">1CS 6</md-button></li>
+                        <li><md-button v-on:click="changerGroupe(301)" class="md-simple">1CS 1</md-button></li>
+                        
+                      </ul>
+                    </drop-down>
+                    
+                  </md-list>   
+                  
     <md-table v-model="users" :table-header-color="tableHeaderColor">
       <md-table-row slot="md-table-row" slot-scope="{ item }">
         <md-table-cell md-label="Matricule">
-          <md-field> <md-input v-model="item.matricule"></md-input></md-field>
+          <md-field> <md-input v-model="item.id_etud"></md-input></md-field>
           </md-table-cell>
         <md-table-cell md-label="Nom">
           <md-field> <md-input v-model="item.nom"></md-input></md-field>
@@ -12,16 +28,16 @@
           <md-field> <md-input v-model="item.prenom"></md-input></md-field>
           </md-table-cell>
         <md-table-cell md-label="Absences">
-          <md-field> <md-input v-model="item.absence"></md-input></md-field>
+          <md-field> <md-input v-model="item.abs"></md-input></md-field>
           </md-table-cell>
         <md-table-cell md-label="Contrôle Continu">
-          <md-field> <md-input v-model="item.cc"></md-input></md-field>
+          <md-field> <md-input v-model="item.Note1"></md-input></md-field>
           </md-table-cell>
         <md-table-cell md-label="Contrôle intermédiaire">
-          <md-field> <md-input v-model="item.ci"></md-input></md-field>
+          <md-field> <md-input v-model="item.note2"></md-input></md-field>
           </md-table-cell>
         <md-table-cell md-label="Contrôle Final">
-          <md-field> <md-input v-model="item.exam"></md-input></md-field>
+          <md-field> <md-input v-model="item.note3"></md-input></md-field>
         </md-table-cell>
         <md-table-cell>
           <md-button class="md-just-icon md-simple md-primary">
@@ -35,61 +51,69 @@
         </md-table-cell>
       </md-table-row>
     </md-table>
+    <div class=" md-layout-item md-small-size-100 md-size-50">
+                      <md-button md-button class="md-round md-success" type="submit" v-on:click="modifnotes()">Sauvegarder</md-button>
+          </div>
   </div>
+  
+
+  
 </template>
 
+
 <script>
-//import {result} from 'C:/igl/gestion-scolarite/connection-example.js';
+import ClasseService from '../../ClasseService.js';
+import NotesService from '../../NotesService.js';
+
+
 export default {
   name: "ordered-table",
   props: {
+    
     tableHeaderColor: {
       type: String,
       default: ""
     }
+    
   },
-  data() {
+  
+  data(){
     return {
       selected: [],
-      users: [
-        {
-          matricule: 1,
-          nom: "Bezza",
-          prenom: "Yousra",
-          absence: "2",
-          cc: "19",
-          ci:"20",
-          exam:"17"
-        },
-        {
-          matricule: 2,
-          nom: "Khaber",
-          prenom: "Sara",
-          absence: "2",
-          cc: "19",
-          ci:"20",
-          exam:"17"
-        },
-        {
-          matricule: 3,
-          nom: "Chikh",
-          prenom: "Yanis",
-          absence: "2",
-          cc: "19",
-          ci:"20",
-          exam:"17"
-        },
-        {
-          matricule: 4,
-          nom: "Idrissou",
-          prenom: "Dalia",
-          absence: "2",
-          cc: "19",
-          ci:"20",
-          exam:"17"
-        }
-      ]
-    };
+      users: [],
+      grp_id: '306',
+      groupe:"1CS - G06",
+      error:''
+    }
+      
+    
+  },
+  async created() {
+    try {
+      this.users = await ClasseService.getClasse(this.grp_id);
+    } catch(err){
+      this.error = err.message;
+    }
+  },
+  methods:{
+  async changerGroupe(id){
+    try{
+      this.grp_id = id;
+      if (id == 301){
+        this.groupe = "1CS - G01";
+      }
+      if (id == 306){
+        this.groupe="1CS - G06";
+      }
+      this.users = await ClasseService.getClasse(id);
+
+    }catch(err){
+      this.error = err.message;
+    }
+  },
+  async modifnotes(){
+    await  NotesService.updateNotes(this.users);
+  }
   }
 };
 </script>

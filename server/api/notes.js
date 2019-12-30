@@ -3,15 +3,18 @@ let router = express.Router()
 const mysql = require('mysql');
 const cors = require("cors");
 
-router.get('/:id_modu',(req,res)=>{
+router.put('/:id_modu',(req,res)=>{
+
     const connection = mysql.createConnection({
         host : 'localhost',
         user : 'root',
         password: '',
         database: 'tpigl'
     });
+
     for (let i=0; i< req.body.length;i++)
     {
+
     const moduID = req.params.id_modu;
     const etudID = req.body[i].id_etud;
     const NNote1 = req.body[i].Note1;
@@ -23,10 +26,14 @@ router.get('/:id_modu',(req,res)=>{
         console.log(result);
       
     });
+
     };  
+
     res.send('notes updated ....');
+
     connection.end();
+
 })
+
 module.exports = router;
-                           
                            
