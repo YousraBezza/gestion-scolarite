@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'tpigl'
+    database: 'tpigl.sql'
 });
 /*
 connection.query('SELECT * from eleve',function(err,rows,field){

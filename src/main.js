@@ -30,7 +30,10 @@ import Notifications from "./components/NotificationPlugin";
 import MaterialDashboard from "./material-dashboard";
 
 import Chartist from "chartist";
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
+Vue.use(VueAxios, axios);
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes
@@ -52,5 +55,9 @@ new Vue({
   router,
   data: {
     Chartist: Chartist
+  },
+  mounted() {
+    axios.get("https://api.nytimes.com/svc/topstories/v2/home.json?api-key=your_api_key")
+    .then(response => {this.results = response.data.results})
   }
 });

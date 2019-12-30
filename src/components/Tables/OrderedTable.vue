@@ -62,10 +62,13 @@
 
 
 <script>
+<<<<<<< HEAD
 import ClasseService from '../../ClasseService.js';
 import NotesService from '../../NotesService.js';
 
 
+=======
+>>>>>>> master
 export default {
   name: "ordered-table",
   props: {

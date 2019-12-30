@@ -7,7 +7,6 @@ import Emplois from "@/pages/Emplois.vue";
 import Deliberation from "@/pages/Deliberation.vue";
 import Encadrement from "@/pages/Encadrement.vue";
 import Parametres from "@/pages/Parametres.vue";
-import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 
 const routes = [
   {
@@ -28,7 +27,7 @@ const routes = [
       
       {
         path: "table",
-        name: "Cours",
+        name: "Cour",
         component: Cours
       },
       {
