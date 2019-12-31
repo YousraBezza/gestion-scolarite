@@ -2,7 +2,18 @@ let express = require('express')
 let router = express.Router()
 const mysql = require('mysql');
 const cors = require("cors");
-
+/**
+ * @swagger
+ * /notes/{id_modu}:
+ *  put:
+ *      description: changer les notes des étudiants dans un module id_modu
+ *      parameters:
+ *        - in: path
+ *          name: id_modu
+ *          required: true
+ *          schema:
+ *              type: integer
+ */
 router.put('/:id_modu',(req,res)=>{
 
     const connection = mysql.createConnection({
