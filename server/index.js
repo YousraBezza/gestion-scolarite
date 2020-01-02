@@ -24,8 +24,10 @@ const swaggerOptions = {
 };
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-
+const classe=require('./api/classe')
+app.use('/api/classe',classe)
 const notes = require('./api/notes');
 app.use('/api/notes',notes);
-const port = process.env.PORT || 8081;
-app.listen(port, ()=>console.log(`server started on port ${port}`))
+//const port = process.env.PORT || 8081;
+//app.listen(port, ()=>console.log(`server started on port ${port}`))
+module.exports=app
