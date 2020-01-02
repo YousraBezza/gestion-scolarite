@@ -1,4 +1,4 @@
-const Sequelize = require("Sequelize")
+const Sequelize = require("sequelize")
 const db={}
 const sequelize= new Sequelize("tpigl","root","",{
     host:'localhost',

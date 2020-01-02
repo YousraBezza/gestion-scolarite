@@ -16,18 +16,16 @@ const swaggerOptions = {
                 name:"Bezza, Chikh, Khaber"
 
             },
-            servers: ["http://localhost:8081","http://localhost:8080"]
+            servers: ["http://localhost:8081","http://localhost:8080","http://localhost:8082"]
         }
          
     },
-    apis: ["./api/*.js ","../backend/routes/courss.js"]
+    apis: ["./api/*.js ","../backend/routes/courss.js","../server2/api/*.js"]
 };
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-const classe=require('./api/classe')
-app.use('/api/classe',classe)
-const notes = require('./api/notes');
-app.use('/api/notes',notes);
-//const port = process.env.PORT || 8081;
-//app.listen(port, ()=>console.log(`server started on port ${port}`))
-module.exports=app
+
+const classe = require('./api/classe');
+app.use('/api/classe',classe);
+const port = process.env.PORT || 8081;
+app.listen(port, ()=>console.log(`server started on port ${port}`))
