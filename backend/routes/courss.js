@@ -6,7 +6,15 @@ const mysql=require("mysql")
 
 const cours=require("../models/cours")
 
-
+/**
+ * @swagger
+ * /courss:
+ *  get:
+ *      description: récupérer les cours 
+ * /add:
+ *  post:
+ *      description:  Ajouter un cours à la bdd  
+ */
 router.get('/',(req,res)=>{
     const connection = mysql.createConnection({
         host : 'localhost',

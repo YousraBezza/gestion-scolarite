@@ -3,6 +3,18 @@ let router = express.Router()
 const mysql = require('mysql');
 const cors = require("cors");
 
+/**
+ * @swagger
+ * /classe/{id}:
+ *  get:
+ *      description: récupérer tous les etudiants d'une classe, l'année d'étude concaténée avec me num du groupe
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          required: true
+ *          schema:
+ *              type: integer
+ */
 
 router.get('/:id_grp',(req,res)=>{
     const connection = mysql.createConnection({

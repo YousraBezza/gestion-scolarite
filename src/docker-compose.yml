@@ -1,0 +1,32 @@
+version : "3"
+services: 
+    gestion-scolarite:
+        image: tpiglfront
+        depends_on:
+            - backend
+            - server
+            - server2
+        ports: 
+            - "8083:8083"
+        networks:
+            - monreseau
+    backend:
+        image: tpiglcours  
+        ports: 
+            - "8080:8080"
+        networks:
+            - monreseau
+    server:
+        image: tpiglclasse
+        ports:
+            - "8081:8081"      
+        networks:
+            - monreseau
+    server2:
+        image: tpiglnotes
+        ports: 
+            - "8082:8082"
+        networks:
+            - monreseau    
+networks:
+    monreseau:                                         
