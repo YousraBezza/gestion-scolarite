@@ -8,5 +8,4 @@ app.use(cors());
 
 const notes = require('./api/notes');
 app.use('/api/notes',notes);
-const port = process.env.PORT || 8082;
-app.listen(port, ()=>console.log(`server started on port ${port}`))
+module.exports=app
