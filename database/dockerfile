@@ -1,0 +1,10 @@
+## Pull the mysql:5.7 image
+FROM mysql:5.7
+
+# database = tpigl and password for root = ''
+ENV MYSQL_DATABASE=tpigl \
+    MYSQL_ALLOW_EMPTY_PASSWORD=yes 
+    
+
+# when container will be started, we'll have `tpigl` database created with this schema
+COPY ./tpiglbdd.sql /docker-entrypoint-initdb.d/
