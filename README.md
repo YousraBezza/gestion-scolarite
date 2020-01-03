@@ -2,6 +2,8 @@
 Ce projet rentre dans le cadre du TP : Initiation au génie logiciel
 Il s'agit de réaliser 2 fonctionalités : 1) La saisie et l'affichage de notes pour les enseignants. 
                                          2) L'ajout des cours par un enseignant.
+										 
+								
  ---------------------------------------------------
 Pour exécuter ce projet sur windows vous devez :
 a) ajouter la bdd "tpigl" et lancer le localhost
