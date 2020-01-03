@@ -27,7 +27,7 @@ router.get('/',(req,res)=>{
         if(!err){
             
             res.send(rows);
-        
+        res.end()
         
         }else{
             console.log(err);
@@ -45,8 +45,9 @@ router.get('/',(req,res)=>{
 
 //////////////////////////////////////
 router.post("/add",(req,res)=>{
-   
+   const id_pro=1 //on met ici l'id du prof connecté
     const today=new Date();
+<<<<<<< HEAD
     const connection = mysql.createConnection({
         host : 'localhost',
         user : 'root',
@@ -69,11 +70,21 @@ router.post("/add",(req,res)=>{
     
         
         
+=======
+    const coursData= {
+        titre: req.body.titre,
+        promo: req.body.promo,
+        date_h:today,
+       description: req.body.description,
+       id_prof:id_pro
+    }
+   
+    cours.create(coursData).then(cours=>{
+        res.send(cours)
+>>>>>>> parent of 57e9533... ajout docker compose pour les api
     })
-
-    connection.end()
-
-
+    .catch(err =>{console.log("erreur"+err)
+   
   
-})
+})})
 module.exports=router
