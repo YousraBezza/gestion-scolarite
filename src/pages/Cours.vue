@@ -38,7 +38,7 @@
        <div class="md-layout-item md-small-size-100 md-size-60 ">
             <md-field>
               <label>Titre</label>
-              <md-input v-model="titre" name="titre" type="text" required></md-input>
+              <md-input v-model="titre" type="text" required></md-input>
             </md-field>
           </div>
 
@@ -46,7 +46,7 @@
           <div class="md-layout-item md-small-size-100 md-size-20">
           <div class="upload-btn-wrapper">
               <md-button md-button class="md-raised md-success" > <i class="material-icons">attachment</i> </md-button>
-              <input name="file" type="file"   />
+              <input type="file"  required />
             </div>
           </div>
           
@@ -55,7 +55,7 @@
           <div class="md-layout-item md-small-size-100 md-size-60">
               <md-field>
                 <label>Description</label>
-                <md-input v-model="description" name="description" type="text" required></md-input>
+                <md-input v-model="description" type="text" required></md-input>
               </md-field>
             </div>
             <div class="md-layout-item md-small-size-100 md-size-20">
@@ -63,7 +63,7 @@
                 <md-list class="dropdown" required><drop-down>   
                       <a slot="title" class="dropdown-toggle" data-toggle="dropdown" required>
                       </a>
-                      <md-button md-button id="menu1" class="md-raised md-success"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                      <md-button md-button class="md-raised md-success"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
                           Destinataire
                         </md-button>
                       
@@ -80,7 +80,7 @@
         </div>
         <br><br>
         <div class=" md-layout-item md-small-size-100 md-size-50">
-            <md-button md-button class="md-round md-success" name="submit" type="submit">Envoyer</md-button>
+            <md-button md-button class="md-round md-success" type="submit">Envoyer</md-button>
         </div>
         
       </md-card-content>

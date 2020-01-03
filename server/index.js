@@ -28,6 +28,7 @@ app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 const classe = require('./api/classe');
 app.use('/api/classe',classe);
 const port = process.env.PORT || 8081;
+<<<<<<< HEAD
 app.listen(port, ()=>console.log(`server started on port ${port}`))
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -36,3 +37,6 @@ module.exports=app
 >>>>>>> parent of 57e9533... ajout docker compose pour les api
 =======
 >>>>>>> parent of 57e9533... ajout docker compose pour les api
+=======
+app.listen(port, ()=>console.log(`server started on port ${port}`))
+>>>>>>> parent of caf486f... Merge branch 'master' of https://github.com/YousraBezza/gestion-scolarite
