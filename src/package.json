@@ -7,6 +7,7 @@
     "dev": "npm run serve",
     "build": "vue-cli-service build",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "lint": "vue-cli-service lint",
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -20,6 +21,9 @@
 =======
     "lint": "vue-cli-service lint"
 >>>>>>> parent of caf486f... Merge branch 'master' of https://github.com/YousraBezza/gestion-scolarite
+=======
+    "lint": "vue-cli-service lint"
+>>>>>>> parent of caf486f... Merge branch 'master' of https://github.com/YousraBezza/gestion-scolarite
   },
   "dependencies": {
     "@vue/babel-preset-app": "^4.1.2",
@@ -30,6 +34,7 @@
     "express": "^4.17.1",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "google-maps": "^3.3.0",
 =======
     "google-maps": "3.3.0",
@@ -38,6 +43,9 @@
 =======
 >>>>>>> parent of 57e9533... ajout docker compose pour les api
     "jest": "^24.9.0",
+=======
+    "google-maps": "3.3.0",
+>>>>>>> parent of caf486f... Merge branch 'master' of https://github.com/YousraBezza/gestion-scolarite
 =======
     "google-maps": "3.3.0",
 >>>>>>> parent of caf486f... Merge branch 'master' of https://github.com/YousraBezza/gestion-scolarite
