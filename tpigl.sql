@@ -1,4 +1,5 @@
-﻿-- phpMyAdmin SQL Dump
+/**/;
+-- phpMyAdmin SQL Dump
 -- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
