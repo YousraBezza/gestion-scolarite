@@ -1,0 +1,26 @@
+version : "3"
+services: 
+    server:
+        image: tpiglclasse
+        depends_on:
+            - mysql 
+        ports:
+            - "8081:8081"      
+        networks:
+            - monreseau 
+    mysql:
+        image: mysql:8.0.2
+        environment:    
+            MYSQL_HOST: localhost
+            MYSQL_USER : root
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+            MYSQL_DATABASE: tpigl
+        ports:
+            - "3306:3306"
+        expose:
+            - 3306
+        networks:
+            - monreseau   
+      
+networks:
+    monreseau:                                         
