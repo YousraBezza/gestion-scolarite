@@ -8,7 +8,11 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "test": "jest --runInBand --detectOpenHandles"
+=======
+    "test": "jest ./server/test/notes.test.js --runInBand --detectOpenHandles"
+>>>>>>> parent of 57e9533... ajout docker compose pour les api
 =======
     "test": "jest ./server/test/notes.test.js --runInBand --detectOpenHandles"
 >>>>>>> parent of 57e9533... ajout docker compose pour les api
@@ -24,6 +28,9 @@
     "google-maps": "^3.3.0",
 =======
     "google-maps": "3.3.0",
+<<<<<<< HEAD
+>>>>>>> parent of 57e9533... ajout docker compose pour les api
+=======
 >>>>>>> parent of 57e9533... ajout docker compose pour les api
     "jest": "^24.9.0",
     "mysql": "^2.17.1",
