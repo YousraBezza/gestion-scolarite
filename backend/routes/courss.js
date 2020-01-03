@@ -11,7 +11,7 @@ const cours=require("../models/cours")
  * /courss:
  *  get:
  *      description: récupérer les cours 
- * /add:
+ * /courss/add:
  *  post:
  *      description:  Ajouter un cours à la bdd  
  */
