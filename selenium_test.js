@@ -3,7 +3,7 @@ var driver = new webdriver.Builder().forBrowser('chrome').build();
 var By=webdriver.By;
 
 
-driver.get('http://localhost:8082/#/dashboard');
+driver.get('http://localhost:8083/#/dashboard');
 try{
         var cc=driver.findElement(By.id("cc"))
         cc.clear()
@@ -13,3 +13,4 @@ try{
     }catch(err){
     console.log(err)
                 }
+            
