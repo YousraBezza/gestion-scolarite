@@ -6,25 +6,10 @@ services:
             - backend
             - server
             - server2
-            - mysql
         ports: 
             - "8083:8083"
         networks:
             - monreseau
-    mysql:
-        image: mysql:8.0.2
-        environment:    
-            MYSQL_HOST: localhost
-            MYSQL_USER : root
-            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-            MYSQL_DATABASE: tpigl
-        ports:
-            - "3306:3306"
-        expose:
-            - 3306
-        networks:
-            - monreseau    
-                    
     backend:
         image: tpiglcours  
         ports: 

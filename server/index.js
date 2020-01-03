@@ -29,4 +29,7 @@ const classe = require('./api/classe');
 app.use('/api/classe',classe);
 const port = process.env.PORT || 8081;
 app.listen(port, ()=>console.log(`server started on port ${port}`))
+<<<<<<< HEAD
 module.exports=app
+=======
+>>>>>>> parent of 57e9533... ajout docker compose pour les api
