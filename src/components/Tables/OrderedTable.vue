@@ -31,7 +31,7 @@
           <md-field> <md-input v-model="item.abs"></md-input></md-field>
           </md-table-cell>
         <md-table-cell md-label="Contrôle Continu">
-          <md-field> <md-input id="cc" v-model="item.Note1"></md-input></md-field>
+          <md-field> <md-input v-model="item.Note1"></md-input></md-field>
           </md-table-cell>
         <md-table-cell md-label="Contrôle intermédiaire">
           <md-field> <md-input v-model="item.note2"></md-input></md-field>
@@ -52,7 +52,7 @@
       </md-table-row>
     </md-table>
     <div class=" md-layout-item md-small-size-100 md-size-50">
-                      <md-button md-button id="submiit" class="md-round md-success" type="submit" v-on:click="modifnotes()">Sauvegarder</md-button>
+                      <md-button md-button class="md-round md-success" type="submit" v-on:click="modifnotes()">Sauvegarder</md-button>
           </div>
   </div>
   
