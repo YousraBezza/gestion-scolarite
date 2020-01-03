@@ -29,3 +29,4 @@ const classe = require('./api/classe');
 app.use('/api/classe',classe);
 const port = process.env.PORT || 8081;
 app.listen(port, ()=>console.log(`server started on port ${port}`))
+module.exports=app

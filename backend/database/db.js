@@ -3,7 +3,7 @@ const db={}
 const sequelize= new Sequelize("tpigl","root","",{
     host:'localhost',
     dialect:'mysql',
-   
+      
 
 })
 db.sequelize=sequelize

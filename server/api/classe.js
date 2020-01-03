@@ -20,6 +20,7 @@ router.get('/:id_grp',(req,res)=>{
     const connection = mysql.createConnection({
         host : 'localhost',
         user : 'root',
+        port: '3306',
         password: '',
         database: 'tpigl'
     })

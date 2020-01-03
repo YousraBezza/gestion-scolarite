@@ -51,7 +51,8 @@ router.post("/add",(req,res)=>{
         host : 'localhost',
         user : 'root',
         password: '',
-        database: 'tpigl'
+        database: 'tpigl',
+    
     })
   const id_pro= 1 ; //on met ici l'id du prof connecté
     connection.query("INSERT INTO cours (titre,description,id_prof,promo,date_h) values (?,?,?,?,?)",[req.body.titre,req.body.description,id_pro,req.body.promo,today],(err, result, fields)=>{
