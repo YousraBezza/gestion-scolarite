@@ -16,6 +16,7 @@ b) exécuter ces commandes:
             6) npm test    //pour les tests unitaires
             7) node selenium_test.js
         Pour voir la documentation vous devez saisir l'url: http://localhost:8081/api-docs
+	
  -------------------------------------------------------
  Pour exécuter ce projet en utilisant Docker:
  Docker-compose up
