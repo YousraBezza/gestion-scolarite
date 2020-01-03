@@ -1,2 +1,3 @@
 const app=require('./server')
-app.listen(8080,function (){console.log("server is running")})
+var port =  8080 || process.env.PORT
+app.listen(port,function (){console.log("server is running")})

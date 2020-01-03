@@ -8,8 +8,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors());
 var courss =require("./routes/courss")
 app.use("/courss",courss)
-var port =  8080
-//app.listen(port,function (){console.log("server is running")})
+
 module.exports=app
 if(process.env.NODE_ENV !== 'production') {
     process.once('uncaughtException', function(err) {
