@@ -20,6 +20,13 @@ b) exécuter ces commandes:
  -------------------------------------------------------
  Pour exécuter ce projet en utilisant Docker:
  Docker-compose up
+ 
+ ---------------------------------------------------
+ développé par : Yousra Bezza
+ 		khaber Sarra
+		Yanis Chikh
+		
+ESI 2019/2020
         
         
         
