@@ -34,13 +34,14 @@ router.put('/:id_modu',(req,res)=>{
     let sql = 'UPDATE notes SET Note1 = ? , note2 = ? , note3 = ?  WHERE id_modu = ? AND id_etud = ?';
     let query = connection.query(sql,[NNote1,Nnote2,Nnote3,moduID,etudID],(err, result)=>{
         if(err) throw err;
-        console.log(result);
+       
       
     });
 
     };  
 
     res.send('notes updated ....');
+    res.end()
 
     connection.end();
 
